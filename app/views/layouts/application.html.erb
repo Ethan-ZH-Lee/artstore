@@ -8,13 +8,30 @@
 </head>
 <body>
 
+<div class="container">
+  <%= render "common/navbar" %>
+  <%= yield %>
+</div>
+
+
+<%#  註解多行 start %> 
+<%- output = false -%> 
+<% if output %> 
+    <%= foo %>  
+    <hr>  
+    <%= bar %>  
+<%#  註解多行 start %> 
+
 <% if !current_user %>
-	<%= link_to("登入", new_user_session_path) %>
+<%= link_to("登入", new_user_session_path) %>
 <% else %>
 	<%= link_to("登出", destroy_user_session_path, method: :delete) %>
 <% end %>
-
 <%= yield %>
+
+<%#  註解多行 end %> 
+<% end %> 
+<%#  註解多行 end %> 
 
 </body>
 </html>
