@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
       @order.calculate_total!(current_cart)
       #redirect_to order_path(@order)
       current_cart.clean!
-      OrderMailer.notify_order_placed(@order).deliver!
+      #OrderMailer.notify_order_placed(@order).deliver!
       redirect_to order_path(@order.token)
     else
       render "carts/checkout"
