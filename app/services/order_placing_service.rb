@@ -9,6 +9,7 @@ class OrderPlacingService
     @order.calculate_total!(@cart)
     @cart.clean!
     # OrderMailer.notify_order_placed(@order).deliver
+    OrderMailer.notify_order_placed(@order).deliver
 
   end
 end
