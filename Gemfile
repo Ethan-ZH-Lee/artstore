@@ -43,6 +43,7 @@ gem "roadie", "2.4.3"
 gem "letter_opener", group: :development
 gem "pay2go"
 gem "figaro"
+gem "fog"
 
 group :production do
   gem "pg"

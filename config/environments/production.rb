@@ -81,5 +81,18 @@ Rails.application.configure do
     #Pay2go.integration_mode = :production
     Pay2go.integration_mode = :development
   end
-  config.action_mailer.default_url_options = { host: 'xxxx.herokuapp.com' } # 你的 heroku app 網址
+  #config.action_mailer.default_url_options = { host: 'xxxx.herokuapp.com' } # 你的 heroku app 網址
+  config.action_mailer.default_url_options = { host: 'artstore-sample-ethan59.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port:           587,
+    address:        "smtp.mailgun.org",
+    user_name:      ENV["mailgun_user"],
+    password:       ENV["mailgun_secret"],
+    domain:         "sandbox67df0391048c4da79c25776bbe5db86e.mailgun.org", # 你的 mailgun domain name
+
+    authentication: :plain,
+  }
+end
 end
